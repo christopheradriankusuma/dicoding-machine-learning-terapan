@@ -73,6 +73,8 @@ Berikut merupakan rumus dari keempat metrik tersebut:
 3. Recall = TP / (TP + FN)
 4. F1 Score = 2 * (Precision * Recall) / (Precision + Recall)
 
+Pada permasalahan ini, mendeteksi pasien dengan stroke sangatlah penting. Oleh karena itu, metrik paling sesuai untuk masalah ini adalah recall dan berusaha untuk meminimalkan jumlah false negative. Adapun jumlah false positive adalah prioritas kedua untuk diminimalisir.
+
 Berikut merupakan hasil dari pelatihan model pertama kali:
 ||Accuracy|Precision|Recall|F1 Score|
 |---|---|---|---|---|
@@ -88,4 +90,45 @@ Berikut merupakan hasil dari pelatihan model pertama kali:
 ![](1/dt.png)
 ![](1/svm.png)
 
-Dapat dilihat bahwa 
+Dapat dilihat bahwa kelima model memiliki nilai recall yang rendah dengan banyak nilai false negative. Hal ini kemungkinan diakibatkan karena data yang tidak imbang di mana terdapat 4733 data pasien tanpa stroke dibandingkan 248 pasien dengan stroke. Oleh karena itu, penulis mencoba melakukan random undersampling untuk menyeimbangkan data.
+```python
+stroke_len = df['stroke'].value_counts()[1]
+df2 = df[df['stroke'] == 0].sample(stroke_len, random_state=42).copy()
+df2 = pd.concat([df2, df[df['stroke'] == 1]])
+```
+Hasil pelatihan model dengan data yang seimbang adalah sebagai berikut:
+||Accuracy|Precision|Recall|F1 Score|
+|---|---|---|---|---|
+|AdaBoost         |0.65    |0.647059|0.66    |0.653465|
+|Gradient Boosting|0.61    |0.603774|0.64    |0.621359|
+|Random Forest    |0.6     |0.596154|0.62    |0.607843|
+|Decision Tree    |0.55    |0.539683|0.68    |0.60177 |
+|SVM              |0.67    |0.688889|0.62    |0.652632|
+
+![](2/ada.png)
+![](2/grad.png)
+![](2/random.png)
+![](2/dt.png)
+![](2/svm.png)
+
+Dapat dilihat bahwa kelima model memiliki nilai recall yang jauh lebih baik dari model yang sebelumnya. Di mana model terbaik adalah model Decision Tree dengan nilai recall 0.68 dan jumlah false negative terkecil yaitu 16. 
+
+Penulis juga menguji model ini terhadap data test yang pertama kali (997 data) dengan hasil sebagai berikut:
+
+||Accuracy|Precision|Recall|F1 Score|
+|---|---|---|---|---|
+|AdaBoost         |0.68004 |0.118156|0.759259|0.204489|
+|Gradient Boosting|0.681043|0.12069 |0.777778|0.208955|
+|Random Forest    |0.688064|0.125364|0.796296|0.216625|
+|Decision Tree    |0.624875|0.09596 |0.703704|0.168889|
+|SVM              |0.749248|0.15    |0.777778|0.251497|
+
+![](3/ada.png)
+![](3/grad.png)
+![](3/random.png)
+![](3/dt.png)
+![](3/svm.png)
+
+Terlihat bahwa model bekerja dengan sangat baik di mana model terbaik adalah model Random Forest dengan nilai recall 0.79 dan jumlah false negative terkecil yaitu 11. Akan tetapi terdapat model lain yang perlu dipertimbangkan, yaitu model SVM. Model SVM memiliki penilaian yang lebih general daripada Random Forest dan Decision Tree di mana SVM memiliki nilai precision yang lebih tinggi, memiliki nilai recall yang sedikit lebih kecil, dan jumlah false positive yang jauh lebih rendah dari kedua model.
+
+Berdasarkan percobaan yang telah penulis lakukan, penulis memilih 2 model sebagai model terbaik untuk masalah ini, yaitu Random Forest dan SVM.
