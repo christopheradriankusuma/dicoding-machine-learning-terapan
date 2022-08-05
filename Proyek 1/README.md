@@ -23,7 +23,7 @@ Adapun solusi yang penulis tawarkan adalah sebagai berikut:
 - Menggunakan berbagai metrik pengukuran, yaitu akurasi, precision, recall, dan f1-score.
 
 ## Data Understanding
-Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
+Data Brain Stroke Prediction diunduh melalui [Kaggle](https://www.kaggle.com/datasets/zzettrkalpakbal/full-filled-brain-stroke-dataset)
 
 ### Variabel-variabel pada Brain Stroke Prediction dataset adalah sebagai berikut:
 - gender: "Male", "Female", "Other"
