@@ -34,7 +34,7 @@ Dataset diunduh dari [Book Recommendation Dataset](https://www.kaggle.com/datase
 - Ratings.csv
 - Users.csv
 
-![](images/bt_1.png)
+![bt_1](https://user-images.githubusercontent.com/32239110/183933070-1c5222af-58ab-4b87-9063-b73b4646f5c4.png)
 
 Variabel-variabel pada Books.csv adalah sebagai berikut:
 - ISBN: ISBN dari buku
@@ -46,14 +46,14 @@ Variabel-variabel pada Books.csv adalah sebagai berikut:
 - Image-URL-M: URL gambar buku ukuran M
 - Image-URL-L: URL gambar buku ukuran L
 
-![](images/rt_1.png)
+![rt_1](https://user-images.githubusercontent.com/32239110/183933192-540c4672-8d35-47c5-b062-6ab9b0d297bf.png)
 
 Variabel-variabel pada Ratings.csv adalah sebagai berikut:
 - User-ID: ID pengguna
 - ISBN: ISBN dari buku
 - Book-Rating: Rating buku
 
-![](images/ut_1.png)
+![ut_1](https://user-images.githubusercontent.com/32239110/183933241-525a095c-5948-4488-9a58-a520ee983c17.png)
 
 Variabel-variabel pada Users.csv adalah sebagai berikut:
 - User-ID: ID pengguna
@@ -62,27 +62,27 @@ Variabel-variabel pada Users.csv adalah sebagai berikut:
 
 Analisis data:
 ### Books
-![](images/bt_2.png)
+![bt_2](https://user-images.githubusercontent.com/32239110/183933315-efbfaf19-24c0-4197-b076-2a5b6274a94c.png)
 
 Terdapat beberapa data yang memiliki format yang salah dan bisa diperbaiki dengan mudah
 
-![](images/bt_3.png)
+![bt_3](https://user-images.githubusercontent.com/32239110/183933394-3491ac10-4931-4b1e-a838-d72f07d74377.png)
 
-![book_1](https://user-images.githubusercontent.com/32239110/183849392-88c1b066-f5d2-46c5-bd17-3f64a7e9a37d.png)
+![book_1](https://user-images.githubusercontent.com/32239110/183933448-605ec401-566c-4a01-a01d-10902b78de4c.png)
 
 Melihat gambar tersebut, dapat dilihat bahwa tahun terbit buku bervariasi dari tahun 0 hingga 2050. Akan tetapi, buku yang terbit di tahun 0 kemungkinan merupakan kesalahan pada data, begitu pula dengan buku yang terbit di tahun 2050. Dari grafik, dapat diketahui bahwa buku kebanyakan diterbitkan pada tahun 1970 hingga 2010. Karena itu, penulis melakukan filtering buku hanya untuk yang terbit pada tahun 1970 hingga 2010 dengan persebaran ditunjukkan gambar berikut
 
-![book_2](https://user-images.githubusercontent.com/32239110/183849432-9c23e26a-946f-4586-8fbc-618ef16e4a47.png)
+![book_2](https://user-images.githubusercontent.com/32239110/183933552-fea75c69-8b01-4797-8f13-6011e4d3340c.png)
 
 ### Ratings
-![rating_1](https://user-images.githubusercontent.com/32239110/183849481-466ce11f-83fb-4f92-a58c-1efa247ba214.png)
+![rating_1](https://user-images.githubusercontent.com/32239110/183933603-af0be693-1e70-4963-8a1c-646a9cbc78ce.png)
 
-![](images/rt_2.png)
+![rt_2](https://user-images.githubusercontent.com/32239110/183933646-d2c00179-c6f3-4f1b-b089-2b77a761d4ed.png)
 
 Melihat grafik tersebut, sangat banyak buku yang memiliki rating 0. Dari tabel dapat terlihat bahwa terdapat beberapa buku terkenal yang mendapat rating 0 dari cukup banyak pengguna. Ada 2 kemungkinan untuk hal tersebut, yaitu rating tersebut merupakan nilai default karena pengguna belum memberikan rating untuk buku tersebut atau memang pengguna memberikan rating 0 terhadap buku tersebut.
 
 ### Users
-![age_1](https://user-images.githubusercontent.com/32239110/183849514-a55c0fe1-b1f1-486a-b56d-615d247dde78.png)
+![age_1](https://user-images.githubusercontent.com/32239110/183933717-ce6b192a-8976-4412-87e3-5cd1b3c0ac82.png)
 
 Dapat dilihat persebaran umur pengguna yang beragam dari 0 hingga 244. Dari gambar ini dapat dilihat bahwa pembaca buku kebanyakan berasal dari golongan usia anak-anak hingga dewasa.
 
@@ -103,7 +103,7 @@ users_df.dropna(inplace=True)
 
 ### Merging
 
-![](images/merge.png)
+![merge](https://user-images.githubusercontent.com/32239110/183933834-8b9fb621-d638-4700-935d-a8aa5207e1ca.png)
 
 Penulis menggabungkan ketiga dataset untuk digunakan pada tahap modelling.
 
