@@ -103,7 +103,7 @@ rating = sigmoid((user_vector . book_vector) + user_bias + book_bias)
 ## Evaluation
 
 ### Content-based Filtering
-![content](https://user-images.githubusercontent.com/32239110/183843869-c99b45ad-0706-4e27-b2ac-2c2bd52ced84.png)
+![content](https://user-images.githubusercontent.com/32239110/183846583-f494983e-a669-4ab6-9626-323eaa3daf7b.png)
 
 Dapat dilihat bahwa sistem rekomendasi memberikan rekomendasi untuk buku yang ditulis oleh penulis yang sama.
 
@@ -112,7 +112,7 @@ Model dibuat dengan aktivasi sigmoid dengan loss function mse dan mendapat val_l
 
 ![mse](https://user-images.githubusercontent.com/32239110/183843459-0ac045f3-ce08-4578-8e61-dc254f9393c4.png)
 ![loss](https://user-images.githubusercontent.com/32239110/183843519-0a7f3a3f-5849-4e64-ba2e-2dd563d596d3.png)
-![colab](https://user-images.githubusercontent.com/32239110/183843544-990f6c3b-fd3e-42ed-81cb-94ffcf70cf0b.png)
+![colab](https://user-images.githubusercontent.com/32239110/183846670-e52f6225-c519-4665-bf97-534d46f33154.png)
 
 ## Referensi:
 1. [Reading Habits Among Students and its Effect on Academic Performance: A Study of Students of Koforidua Polytechnic](https://www.academia.edu/download/52948426/fulltext.pdf)
