@@ -279,7 +279,7 @@ def print_recommendation(user_id, top_n=10):
   inp = np.asarray([[user_id, i] for i in books_not_read_id]).astype('float64')
 
   ratings = model.predict(inp).flatten()
-  recommended_books_id = [id_to_isbn.get(i) for i in ratings.argsort()[-top_n:][::-1]]
+  recommended_books_id = [id_to_isbn.get(inp[i, 1]) for i in ratings.argsort()[-top_n:][::-1]]
   user_top_books = book_ratings_df[book_ratings_df['user_id'] == user_id].sort_values(by='Book-Rating', ascending=False).head(5)
 
   print(f'User {id_to_user.get(user_id)} has read:')

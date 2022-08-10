@@ -76,9 +76,10 @@ Penulis hanya mengambil user yang berumur antara 10 hingga 70 tahun.
 Penulis menggabungkan ketiga dataset untuk digunakan pada tahap modelling.
 
 ## Modeling
-Pemodelan dilakukan dengan menggunakan 2 metode yang berbeda. Masing-masing metode memberikan n recommendation teratas untuk pengguna
+Pemodelan dilakukan dengan menggunakan 2 metode yang berbeda. Masing-masing metode memberikan n recommendation teratas untuk pengguna.
+
 ### Content-based Filtering
-Metode ini digunakan dengan menghitung kemiripan buku berdasarkan penulisnya. Penulis mengimplementasikan algoritma ini menggunakan Tf-Idf dan menghitung kemiripan buku menggunakan cosine similarity.
+Metode ini dilakukan dengan menghitung kemiripan buku berdasarkan penulisnya. Penulis mengimplementasikan algoritma ini menggunakan Tf-Idf dan menghitung kemiripan buku menggunakan cosine similarity. Rekomendasi buku didasarkan pada kemiripan buku dengan buku yang pernah dibaca pengguna tersebut sebelumnya.
 ```python
 vectorizer = TfidfVectorizer()
 vectorizer.fit(book_author_df['Book-Author'])
@@ -95,7 +96,7 @@ def book_recommendations(book_name, similarity_data=cosine_sim_df, items=book_au
 ```
 
 ### Collaborative Filtering
-Metode ini merupakan metode filtering dengan membandingkan antar pengguna. Penulis mengimplementasikan algoritma ini menggunakan deep learning dengan aktivasi sigmoid.
+Metode ini merupakan metode filtering dengan membandingkan antar pengguna. Penulis mengimplementasikan algoritma ini menggunakan deep learning dengan aktivasi sigmoid. Rekomendasi buku didasarkan pada kemungkinan rating yang akan diberikan pengguna terhadap buku yang belum pernah dibaca.
 ```
 rating = sigmoid((user_vector . book_vector) + user_bias + book_bias)
 ```
@@ -105,7 +106,7 @@ rating = sigmoid((user_vector . book_vector) + user_bias + book_bias)
 ### Content-based Filtering
 ![content](https://user-images.githubusercontent.com/32239110/183846583-f494983e-a669-4ab6-9626-323eaa3daf7b.png)
 
-Dapat dilihat bahwa sistem rekomendasi memberikan rekomendasi untuk buku yang ditulis oleh penulis yang sama.
+Dapat dilihat dari rekomendasi yang diberikan, sistem cenderung merekomendasikan buku dari penulis yang memiliki nama yang mirip (Wendy atau Hobson). Hal ini menandakan sistem rekomendasi sudah dapat memberikan rekomendasi berdasarkan penulis dari buku yang pernah dibaca oleh pengguna.
 
 ### Collaborative Filtering
 Model dibuat dengan aktivasi sigmoid dengan loss function mse dan mendapat val_loss sebesar 0,0736.
@@ -113,6 +114,8 @@ Model dibuat dengan aktivasi sigmoid dengan loss function mse dan mendapat val_l
 ![mse](https://user-images.githubusercontent.com/32239110/183843459-0ac045f3-ce08-4578-8e61-dc254f9393c4.png)
 ![loss](https://user-images.githubusercontent.com/32239110/183843519-0a7f3a3f-5849-4e64-ba2e-2dd563d596d3.png)
 ![colab](https://user-images.githubusercontent.com/32239110/183846670-e52f6225-c519-4665-bf97-534d46f33154.png)
+
+Seperti yang terlihat, sistem memberikan rekomendasi buku yang kemungkinan akan mendapat rating yang tinggi dari pengguna.
 
 ## Referensi:
 1. [Reading Habits Among Students and its Effect on Academic Performance: A Study of Students of Koforidua Polytechnic](https://www.academia.edu/download/52948426/fulltext.pdf)
