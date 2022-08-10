@@ -50,15 +50,19 @@ Variabel-variabel pada Users.csv adalah sebagai berikut:
 Analisis data:
 ### Books
 ![book_1](https://user-images.githubusercontent.com/32239110/183849392-88c1b066-f5d2-46c5-bd17-3f64a7e9a37d.png)
+
 Melihat gambar tersebut, dapat dilihat bahwa tahun terbit buku bervariasi dari tahun 0 hingga 2050. Akan tetapi, buku yang terbit di tahun 0 kemungkinan merupakan kesalahan pada data, begitu pula dengan buku yang terbit di tahun 2050. Karena itu, penulis melakukan filtering buku hanya untuk yang terbit pada tahun 1900 hingga 2010 dengan persebaran ditunjukkan gambar berikut
+
 ![book_2](https://user-images.githubusercontent.com/32239110/183849432-9c23e26a-946f-4586-8fbc-618ef16e4a47.png)
 
 ### Ratings
 ![rating_1](https://user-images.githubusercontent.com/32239110/183849481-466ce11f-83fb-4f92-a58c-1efa247ba214.png)
+
 Melihat gambar tersebut, sangat banyak buku yang memiliki rating 0. Ada 2 kemungkinan untuk hal tersebut, yaitu rating tersebut merupakan nilai default karena pengguna belum memberikan rating untuk buku tertentu atau memang pengguna memberikan rating 0 terhadap buku tersebut.
 
 ### Users
 ![age_1](https://user-images.githubusercontent.com/32239110/183849514-a55c0fe1-b1f1-486a-b56d-615d247dde78.png)
+
 Dapat dilihat persebaran umur pengguna yang beragam dari 0 hingga 244. Dari gambar ini dapat dilihat bahwa pembaca buku kebanyakan berasal dari golongan usia anak-anak hingga dewasa.
 
 ## Data Preparation
