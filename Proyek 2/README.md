@@ -89,13 +89,17 @@ Dapat dilihat persebaran umur pengguna yang beragam dari 0 hingga 244. Dari gamb
 ## Data Preparation
 
 ### Books
-Penulis menghapus kolom Image-URL-S, Image-URL-M, dan Image-URL-L karena tidak diperlukan.
-
-### Ratings
-Penulis menghapus rating 0 dari dataset ratings.
+Penulis menghapus kolom Image-URL-S, Image-URL-M, dan Image-URL-L karena tidak diperlukan. Selain itu, tidak terdapat null values pada dataset yang digunakan.
+```python
+books_df.drop(columns=['Image-URL-S', 'Image-URL-M', 'Image-URL-L'], inplace=True)
+```
 
 ### Users
-Penulis hanya mengambil user yang berumur antara 10 hingga 70 tahun.
+Terdapat banyak null values pada tabel users. Selain itu, usia pengguna bervariasi dari 0 hingga 244. Sehingga penulis hanya mengambil user yang berumur antara 10 hingga 70 tahun.
+```python
+users_df = users_df[(users_df['Age'] >= 10) & (users_df['Age'] <= 70)]
+users_df.dropna(inplace=True)
+```
 
 ### Merging
 
