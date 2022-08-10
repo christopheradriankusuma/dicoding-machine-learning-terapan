@@ -19,7 +19,14 @@ Adapun tujuan proyek ini adalah:
 - Mengetahui cara memilih buku yang sesuai dengan preferensi seseorang
 
 ### Solution statements
-- Menggunakan 2 pendekatan berbeda untuk sistem rekomendasi, yaitu Content-based dan Collaborative Filtering
+Menggunakan 2 pendekatan berbeda untuk sistem rekomendasi, yaitu:
+1. Content-based
+  
+    Algoritma yang digunakan pada pendekatan ini adalah penghitungan kemiripan sebuah buku berdasarkan penulisnya.
+
+2. Collaborative Filtering
+
+    Algoritma yang digunakan pada pendekatan ini adalah menghitung kemungkinan rating yang akan diberikan pengguna menggunakan deep learning.
 
 ## Data Understanding
 Dataset diunduh dari [Book Recommendation Dataset](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset). Dataset ini terdiri dari 3 file csv:
