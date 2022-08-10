@@ -76,6 +76,7 @@ Penulis hanya mengambil user yang berumur antara 10 hingga 70 tahun.
 Penulis menggabungkan ketiga dataset untuk digunakan pada tahap modelling.
 
 ## Modeling
+Pemodelan dilakukan dengan menggunakan 2 metode yang berbeda. Masing-masing metode memberikan n recommendation teratas untuk pengguna
 ### Content-based Filtering
 Metode ini digunakan dengan menghitung kemiripan buku berdasarkan penulisnya. Penulis mengimplementasikan algoritma ini menggunakan Tf-Idf dan menghitung kemiripan buku menggunakan cosine similarity.
 ```python
@@ -102,15 +103,16 @@ rating = sigmoid((user_vector . book_vector) + user_bias + book_bias)
 ## Evaluation
 
 ### Content-based Filtering
-![](content.png)
+![content](https://user-images.githubusercontent.com/32239110/183843869-c99b45ad-0706-4e27-b2ac-2c2bd52ced84.png)
+
 Dapat dilihat bahwa sistem rekomendasi memberikan rekomendasi untuk buku yang ditulis oleh penulis yang sama.
 
 ### Collaborative Filtering
 Model dibuat dengan aktivasi sigmoid dengan loss function mse dan mendapat val_loss sebesar 0,0736.
 
-![](mse.png)
-![](loss.png)
-![](colab.png)
+![mse](https://user-images.githubusercontent.com/32239110/183843459-0ac045f3-ce08-4578-8e61-dc254f9393c4.png)
+![loss](https://user-images.githubusercontent.com/32239110/183843519-0a7f3a3f-5849-4e64-ba2e-2dd563d596d3.png)
+![colab](https://user-images.githubusercontent.com/32239110/183843544-990f6c3b-fd3e-42ed-81cb-94ffcf70cf0b.png)
 
 ## Referensi:
 1. [Reading Habits Among Students and its Effect on Academic Performance: A Study of Students of Koforidua Polytechnic](https://www.academia.edu/download/52948426/fulltext.pdf)
